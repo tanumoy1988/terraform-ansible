@@ -1,25 +1,7 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 3.27"
-    }
-  }
+resource "local_file" "file" {
 
-  required_version = ">= 0.14.9"
-}
+    content  = "This is tanumoy"
 
-provider "aws" {
-  profile = "default"
-  region  = "us-east-1"
-}
+    filename = "info-tf.txt"
 
-resource "aws_s3_bucket" "b" {
-  bucket = "my-tf-test-bucket-sl-varun9977"
-
-  tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
-
-  }
 }
